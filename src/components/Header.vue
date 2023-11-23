@@ -15,7 +15,7 @@
     </div>
     <section class="section col-12 row">
       <aside
-        class="section__box col-12"
+        class="section__box col-12 col-md-6"
         v-for="(data, index) in props.textData.team"
         :key="index"
         :id="index"
@@ -74,8 +74,8 @@ const props = defineProps({
   }
 
   &__box:nth-child(2) {
-    background-color: $bg-primary;
-    color: #fcbdbc;
+    background-color: $bg-alternative;
+    color: #ffffff;
   }
 
   &__info {
