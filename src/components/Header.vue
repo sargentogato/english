@@ -2,8 +2,9 @@
   <div class="header row">
     <div
       class="header__box col-12"
+      v-for="(data, index) in props.textData.services"
+      :key="index"
       id="presentation"
-      v-for="data in props.textData.services"
     >
       <h1 class="header__title">
         {{ data.name }}
@@ -15,8 +16,9 @@
     <section class="section col-12 row">
       <aside
         class="section__box col-12"
-        id="strength"
-        v-for="data in props.textData.team"
+        v-for="(data, index) in props.textData.team"
+        :key="index"
+        :id="index"
       >
         <p class="section__title">{{ data.title }}</p>
         <p class="section__info">

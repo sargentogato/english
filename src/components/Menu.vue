@@ -18,10 +18,10 @@
             <a class="nav-link" href="#presentation">What we do</a>
           </li>
           <li class="nav-item" @click="close">
-            <a class="nav-link" href="#strength">Team</a>
+            <a class="nav-link" href="#0">Team</a>
           </li>
           <li class="nav-item" @click="close">
-            <a class="nav-link" href="#customers">We give you</a>
+            <a class="nav-link" href="#1">We give you</a>
           </li>
         </ul>
       </div>
