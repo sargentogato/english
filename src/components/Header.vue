@@ -24,15 +24,39 @@
         <p class="section__info">
           {{ data.description }}
         </p>
+        <svgImage v-if="isSmallScreen && !index" />
       </aside>
     </section>
+    <div class="imageSvg">
+      <svgImage v-if="!isSmallScreen" />
+    </div>
   </div>
 </template>
 
 <script setup>
+import svgImage from "../components/imageSVG.vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
+
+onMounted(() => {
+  window.addEventListener("resize", handleResize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", handleResize);
+});
+
+//props
 const props = defineProps({
   textData: Object,
 });
+
+//variavbles
+const isSmallScreen = ref(window.innerWidth < 760);
+
+//functions
+const handleResize = () => {
+  isSmallScreen.value = window.innerWidth < 760;
+};
 </script>
 
 <style lang="scss" scoped>
@@ -47,7 +71,8 @@ const props = defineProps({
   }
 
   &__box,
-  .section__box {
+  .section__box,
+  .imageSvg {
     padding-top: $padding-top-bottom-header;
     padding-bottom: $padding-top-bottom-header;
     padding-left: $padding-left-right-header;
@@ -79,7 +104,37 @@ const props = defineProps({
   }
 
   &__info {
-    font-size: 1.5rem;
+    font-size: $info-mobile;
+  }
+
+  &__subtitle {
+    font-size: $titleSection-mobile;
+  }
+}
+
+.imageSvg {
+  display: none;
+}
+
+@media (width > 760px) {
+  .header {
+    &__info {
+      font-size: $info-desktop;
+    }
+  }
+
+  .section {
+    &__info {
+      font-size: $info-desktop;
+    }
+
+    &__title {
+      font-size: $titleSection-desktop;
+    }
+  }
+
+  .imageSvg {
+    display: block;
   }
 }
 </style>

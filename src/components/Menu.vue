@@ -45,5 +45,6 @@ function close() {
   background-color: yellow;
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 </style>

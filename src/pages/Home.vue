@@ -2,12 +2,16 @@
   <div class="container-fluid p-0 main">
     <Menu />
     <Header :textData="textData" />
+    <LegalSection :textData="textData" />
+    <DiferentiatesSection :textData="textData" />
   </div>
 </template>
 
 <script setup>
 import Menu from "../components/Menu.vue";
 import Header from "../components/Header.vue";
+import LegalSection from "../components/LegalSection.vue";
+import DiferentiatesSection from "../components/DiferentiatesSection.vue";
 import { data } from "../assets/data.js";
 import { ref } from "vue";
 
