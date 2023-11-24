@@ -13,7 +13,7 @@
     </h2>
     <aside class="section__box col-12 col-md-6">
       <p class="section__title">{{ props.textData.diferent[1].title }}</p>
-      <img :src="/images/english0.jpg" alt="" />
+      <img :src="getImage('english0.jpg')" alt="" />
       <p class="section__info">
         {{ props.textData.diferent[1].description }}
       </p>
@@ -23,7 +23,7 @@
       <p class="section__info">
         {{ props.textData.diferent[2].description }}
       </p>
-      <img :src="/images/english1.jpg" alt="" />
+      <img :src="getImage('english1.jpg')" alt="" />
     </aside>
   </section>
 </template>
@@ -38,7 +38,7 @@ const props = defineProps({
 });
 
 function getImage(image) {
-  const path = new URL("../../public/images", import.meta.url).href;
+  const path = new URL("../../public/images/", import.meta.url).href;
 
   return `${path}/${image}`;
 }
