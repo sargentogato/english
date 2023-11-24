@@ -1,10 +1,10 @@
 <template>
   <div class="container-fluid p-0 main">
     <Menu />
-    <Header :textData="textData" />
+    <Header :textData="textData" :time="time" />
     <LegalSection :textData="textData" />
-    <DiferentiatesSection :textData="textData" />
-    <Contact :textData="textData" />
+    <DiferentiatesSection :textData="textData" :time="time" />
+    <Contact :textData="textData" :time="time" />
   </div>
 </template>
 
@@ -19,6 +19,7 @@ import { data } from "../assets/data.js";
 import { ref } from "vue";
 
 const textData = ref(data);
+const time = ref(700);
 </script>
 
 <style lang="scss" scoped></style>

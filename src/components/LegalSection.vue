@@ -4,12 +4,32 @@
     v-for="(data, index) in props.textData.legal"
     :key="index"
   >
-    <p class="section__title">{{ data.title }}</p>
-    <p class="section__info">{{ data.description }}</p>
+    <p
+      class="section__title"
+      v-scroll-reveal.reset="{
+        delay: props.time,
+        easing: 'ease-in-out',
+        origin: 'bottom',
+      }"
+    >
+      {{ data.title }}
+    </p>
+    <p
+      class="section__info"
+      v-scroll-reveal.reset="{
+        delay: props.time,
+        easing: 'ease-in-out',
+        origin: 'bottom',
+      }"
+    >
+      {{ data.description }}
+    </p>
   </section>
 </template>
 
 <script setup>
+import { vScrollReveal } from "vue-scroll-reveal";
+
 const props = defineProps({
   textData: Object,
 });

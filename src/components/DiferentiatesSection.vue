@@ -1,5 +1,13 @@
 <template>
-  <section id="diferent" class="section col-12 row">
+  <section
+    id="diferent"
+    class="section col-12 row"
+    v-scroll-reveal.reset="{
+      delay: props.time,
+      easing: 'ease-in-out',
+      origin: 'bottom',
+    }"
+  >
     <h2 class="section__mainTitle">
       {{ props.textData.diferent[0].title }}
     </h2>
@@ -22,9 +30,11 @@
 
 <script setup>
 import { ref } from "vue";
+import { vScrollReveal } from "vue-scroll-reveal";
 
 const props = defineProps({
   textData: Object,
+  time: Number,
 });
 </script>
 

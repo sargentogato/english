@@ -6,7 +6,7 @@
       :key="index"
       id="presentation"
     >
-      <h1 class="header__title">
+      <h1 class="header__title" v>
         {{ data.name }}
       </h1>
       <h2 class="header__info">
@@ -27,7 +27,14 @@
         <svgImage v-if="isSmallScreen && !index" />
       </aside>
     </section>
-    <div class="imageSvg">
+    <div
+      class="imageSvg"
+      v-scroll-reveal.reset="{
+        delay: props.time,
+        easing: 'ease-in-out',
+        origin: 'bottom',
+      }"
+    >
       <svgImage v-if="!isSmallScreen" />
     </div>
   </div>
@@ -35,6 +42,7 @@
 
 <script setup>
 import svgImage from "../components/imageSVG.vue";
+import { vScrollReveal } from "vue-scroll-reveal";
 import { ref, onMounted, onBeforeUnmount } from "vue";
 
 onMounted(() => {
@@ -48,6 +56,7 @@ onBeforeUnmount(() => {
 //props
 const props = defineProps({
   textData: Object,
+  time: Number,
 });
 
 //variavbles
