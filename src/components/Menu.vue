@@ -45,9 +45,20 @@ function close() {
 
 <style lang="scss" scoped>
 .navbar {
-  background-color: #f1f2f6;
+  background-color: #5648f9;
   position: sticky;
   top: 0;
   z-index: 2;
+}
+
+.navbar-toggler {
+  background-color: whitesmoke;
+}
+
+.nav-item {
+  font-size: 2rem;
+}
+.nav-link {
+  color: whitesmoke;
 }
 </style>
