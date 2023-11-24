@@ -41,4 +41,18 @@ export const data = {
         "The topics covered require, in fact, high standards of competence and experience to guarantee effective solutions to the problems that arise from the lack of equivalence between terminology and legal systems.",
     },
   ],
+  contact: [
+    {
+      title: "Contact",
+      address: "info@LBM",
+      instructions: "Send your requests to the following address",
+      info: "to have a free estimate",
+      callInfo: "or you can call us at the following number:",
+      number: "368 56 56 39",
+      secondTitle: "To offer you a better service",
+      request: "Please send us the following information to a better stimate:",
+      infoSubmit:
+        "Name and surname, E-mail, File to translate, Delivery date, Source language,Target language",
+    },
+  ],
 };

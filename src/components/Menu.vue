@@ -18,10 +18,13 @@
             <a class="nav-link" href="#presentation">What we do</a>
           </li>
           <li class="nav-item" @click="close">
-            <a class="nav-link" href="#0">Team</a>
+            <a class="nav-link" href="#1">We give you</a>
           </li>
           <li class="nav-item" @click="close">
-            <a class="nav-link" href="#1">We give you</a>
+            <a class="nav-link" href="#diferent">What differentiates us</a>
+          </li>
+          <li class="nav-item" @click="close">
+            <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
       </div>
@@ -42,7 +45,7 @@ function close() {
 
 <style lang="scss" scoped>
 .navbar {
-  background-color: yellow;
+  background-color: #f1f2f6;
   position: sticky;
   top: 0;
   z-index: 2;

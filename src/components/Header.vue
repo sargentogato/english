@@ -80,9 +80,13 @@ const handleResize = () => {
     text-align: center;
   }
 
+  &__title {
+    font-size: $main-title-mobile;
+    color: white;
+  }
+
   &__title,
   .section__title {
-    font-size: $title-mobile;
     line-height: $line-heigt-general;
     font-weight: bold;
   }
@@ -103,6 +107,10 @@ const handleResize = () => {
     color: #ffffff;
   }
 
+  &__title {
+    font-size: $title-mobile;
+  }
+
   &__info {
     font-size: $info-mobile;
   }
@@ -118,6 +126,10 @@ const handleResize = () => {
 
 @media (width > 760px) {
   .header {
+    &__title {
+      font-size: $main-title-desktop;
+    }
+
     &__info {
       font-size: $info-desktop;
     }

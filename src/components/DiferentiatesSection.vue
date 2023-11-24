@@ -1,9 +1,11 @@
 <template>
-  <section class="section col-12 row">
-    <h2 class="section__mainTitle">{{ props.textData.diferent[0].title }}</h2>
+  <section id="diferent" class="section col-12 row">
+    <h2 class="section__mainTitle">
+      {{ props.textData.diferent[0].title }}
+    </h2>
     <aside class="section__box col-12 col-md-6">
       <p class="section__title">{{ props.textData.diferent[1].title }}</p>
-      <img :src="`../../public/images/english0.jpg`" alt="" />
+      <img :src="`/images/english0.jpg`" alt="" />
       <p class="section__info">
         {{ props.textData.diferent[1].description }}
       </p>
@@ -13,7 +15,7 @@
       <p class="section__info">
         {{ props.textData.diferent[2].description }}
       </p>
-      <img :src="`../../public/images/english1.jpg`" alt="" />
+      <img :src="`/images/english1.jpg`" alt="" />
     </aside>
   </section>
 </template>
