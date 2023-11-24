@@ -69,6 +69,7 @@ function getImage(image) {
     text-align: center;
     font-weight: bold;
     color: white;
+    padding: 0 2rem;
   }
 
   &__title {

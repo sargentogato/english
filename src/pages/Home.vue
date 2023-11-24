@@ -14,12 +14,13 @@ import Header from "../components/Header.vue";
 import LegalSection from "../components/LegalSection.vue";
 import DiferentiatesSection from "../components/DiferentiatesSection.vue";
 import Contact from "../components/Contact.vue";
+
 //data and properties vue
 import { data } from "../assets/data.js";
 import { ref } from "vue";
 
 const textData = ref(data);
-const time = ref(700);
+const time = ref(500);
 </script>
 
 <style lang="scss" scoped></style>
