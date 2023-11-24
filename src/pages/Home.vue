@@ -23,4 +23,8 @@ const textData = ref(data);
 const time = ref(500);
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.main {
+  overflow-y: hidden;
+}
+</style>
