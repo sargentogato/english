@@ -18,7 +18,7 @@
             <a class="nav-link" href="#presentation">What we do</a>
           </li>
           <li class="nav-item" @click="close">
-            <a class="nav-link" href="#1">We give you</a>
+            <a class="nav-link" href="#section1">We give you</a>
           </li>
           <li class="nav-item" @click="close">
             <a class="nav-link" href="#diferent">What differentiates us</a>

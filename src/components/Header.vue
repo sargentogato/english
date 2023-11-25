@@ -20,21 +20,19 @@
         :key="index"
         :id="`section${index}`"
       >
-        <p class="section__title">{{ data.title }}</p>
-        <p class="section__info">
+        <p class="section__title" v-scroll-reveal.reset="props.scrollEfect">
+          {{ data.title }}
+        </p>
+        <p class="section__info" v-scroll-reveal.reset="props.scrollEfect">
           {{ data.description }}
         </p>
-        <svgImage v-if="isSmallScreen && !index" />
+        <svgImage
+          v-if="isSmallScreen && !index"
+          v-scroll-reveal.reset="props.scrollEfect"
+        />
       </aside>
     </section>
-    <div
-      class="imageSvg"
-      v-scroll-reveal.reset="{
-        delay: props.time,
-        easing: 'ease-in-out',
-        origin: 'bottom',
-      }"
-    >
+    <div class="imageSvg" v-scroll-reveal.reset="props.scrollEfect">
       <svgImage v-if="!isSmallScreen" />
     </div>
   </div>
@@ -42,8 +40,7 @@
 
 <script setup>
 import svgImage from "../components/imageSVG.vue";
-// import { vScrollReveal } from "vue-scroll-reveal";
-import { createScrollRevealDirective } from "vue-scroll-reveal";
+import { vScrollReveal } from "vue-scroll-reveal";
 import { ref, onMounted, onBeforeUnmount } from "vue";
 
 onMounted(() => {
@@ -57,16 +54,11 @@ onBeforeUnmount(() => {
 //props
 const props = defineProps({
   textData: Object,
-  time: Number,
+  scrollEfect: Object,
 });
 
 //variavbles
 const isSmallScreen = ref(window.innerWidth < 760);
-const vScrollReveal = createScrollRevealDirective({
-  delay: props.time,
-  easing: "ease-in-out",
-  origin: "bottom",
-});
 
 //functions
 const handleResize = () => {

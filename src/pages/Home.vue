@@ -1,10 +1,11 @@
 <template>
+  <Menu />
   <div class="container-fluid p-0 main">
-    <Menu />
-    <Header :textData="textData" :time="time" />
+    <Header :textData="textData" :scrollEfect="scrollEfect" />
     <LegalSection :textData="textData" />
-    <DiferentiatesSection :textData="textData" :time="time" />
-    <Contact :textData="textData" :time="time" />
+    <div id="diferent"></div>
+    <DiferentiatesSection :textData="textData" :scrollEfect="scrollEfect" />
+    <Contact :textData="textData" :scrollEfect="scrollEfect" />
   </div>
 </template>
 
@@ -20,7 +21,12 @@ import { data } from "../assets/data.js";
 import { ref } from "vue";
 
 const textData = ref(data);
-const time = ref(800);
+const scrollEfect = ref({
+  delay: 400,
+  easing: "ease-in-out",
+  origin: "bottom",
+  distance: "100px",
+});
 </script>
 
 <style lang="scss" scoped>

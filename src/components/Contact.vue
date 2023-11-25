@@ -1,17 +1,10 @@
 <template>
   <section class="row section">
-    <aside
-      id="contact"
-      class="section__box col-12"
-      v-scroll-reveal.reset="{
-        delay: props.time,
-        easing: 'ease-in-out',
-        origin: 'bottom',
-        distance: '300px',
-      }"
-    >
-      <h2 class="section__title">{{ data.title }}</h2>
-      <div class="section__info">
+    <aside id="contact" class="section__box col-12">
+      <h2 class="section__title" v-scroll-reveal.reset="props.scrollEfect">
+        {{ data.title }}
+      </h2>
+      <div class="section__info" v-scroll-reveal.reset="props.scrollEfect">
         {{ data.instructions }}
         <span>{{ data.address }}</span>
         {{ data.info }} {{ data.callInfo }}
@@ -20,11 +13,18 @@
         </span>
       </div>
 
-      <h2 class="section__secondTitle">{{ data.secondTitle }}</h2>
-      <p class="section__info">
+      <h2
+        class="section__secondTitle"
+        v-scroll-reveal.reset="props.scrollEfect"
+      >
+        {{ data.secondTitle }}
+      </h2>
+      <p class="section__info" v-scroll-reveal.reset="props.scrollEfect">
         {{ data.request }}
       </p>
-      <p class="section__info">{{ data.infoSubmit }}</p>
+      <p class="section__info" v-scroll-reveal.reset="props.scrollEfect">
+        {{ data.infoSubmit }}
+      </p>
     </aside>
   </section>
 </template>
@@ -34,8 +34,10 @@ import { vScrollReveal } from "vue-scroll-reveal";
 
 const props = defineProps({
   textData: Object,
-  time: Number,
+  scrollEfect: Object,
 });
+
+//variables
 const data = props.textData.contact[0];
 </script>
 

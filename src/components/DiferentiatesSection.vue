@@ -1,30 +1,35 @@
 <template>
-  <section
-    id="diferent"
-    class="section col-12 row"
-    v-scroll-reveal.reset="{
-      delay: props.time,
-      easing: 'ease-in-out',
-      origin: 'bottom',
-      distance: '300px',
-    }"
-  >
-    <h2 class="section__mainTitle">
+  <section class="section col-12 row" v-scroll-reveal.reset="scrollEfect">
+    <h2 class="section__mainTitle" v-scroll-reveal.reset="scrollEfect">
       {{ props.textData.diferent[0].title }}
     </h2>
-    <aside class="section__box col-12 col-md-6">
+    <aside
+      class="section__box col-12 col-md-6"
+      v-scroll-reveal.reset="scrollEfect"
+    >
       <p class="section__title">{{ props.textData.diferent[1].title }}</p>
-      <img :src="getImage('english0.jpg')" alt="" />
+      <img
+        :src="getImage('english0.jpg')"
+        alt=""
+        v-scroll-reveal.reset="scrollEfect"
+      />
       <p class="section__info">
         {{ props.textData.diferent[1].description }}
       </p>
     </aside>
-    <aside class="section__box col-12 col-md-6">
+    <aside
+      class="section__box col-12 col-md-6"
+      v-scroll-reveal.reset="scrollEfect"
+    >
       <p class="section__title">{{ props.textData.diferent[2].title }}</p>
       <p class="section__info">
         {{ props.textData.diferent[2].description }}
       </p>
-      <img :src="getImage('english1.jpg')" alt="" />
+      <img
+        :src="getImage('english1.jpg')"
+        alt=""
+        v-scroll-reveal.reset="scrollEfect"
+      />
     </aside>
   </section>
 </template>
@@ -34,7 +39,7 @@ import { vScrollReveal } from "vue-scroll-reveal";
 
 const props = defineProps({
   textData: Object,
-  time: Number,
+  scrollEfect: Object,
 });
 
 function getImage(image) {
