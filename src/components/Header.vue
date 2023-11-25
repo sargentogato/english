@@ -6,7 +6,7 @@
       :key="index"
       id="presentation"
     >
-      <h1 class="header__title" v>
+      <h1 class="header__title">
         {{ data.name }}
       </h1>
       <h2 class="header__info">
@@ -18,7 +18,7 @@
         class="section__box col-12 col-md-6"
         v-for="(data, index) in props.textData.team"
         :key="index"
-        :id="index"
+        :id="`section${index}`"
       >
         <p class="section__title">{{ data.title }}</p>
         <p class="section__info">
@@ -156,6 +156,46 @@ const handleResize = () => {
 
   .imageSvg {
     display: block;
+  }
+}
+
+@keyframes headerTitle {
+  from {
+    transform: translateX(-100%);
+  }
+}
+.header {
+  &__title {
+    animation: headerTitle $time-animation;
+  }
+}
+@keyframes headerInfo {
+  from {
+    transform: translateX(100%);
+  }
+}
+.header {
+  &__info {
+    animation: headerInfo $time-animation;
+  }
+}
+
+#section0 {
+  opacity: 0;
+  transform: translateY(100%);
+  animation: fadeIn $time-animation $delay-one both; /* 'both' asegura que se mantengan los estilos finales */
+}
+
+#section1 {
+  opacity: 0;
+  transform: translateY(100%);
+  animation: fadeIn $time-animation $delay-two both;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>
