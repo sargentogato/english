@@ -1,3 +1,4 @@
+//Title & text
 $main-title-mobile: 2.8rem;
 $main-title-desktop: 3.8rem;
 $title-mobile: 2.6rem;
@@ -6,19 +7,24 @@ $titleSection-desktop: 2.6rem;
 $info-mobile: 1.5rem;
 $info-desktop: 2rem;
 $line-heigt-general: 3.6rem;
+
+//shadows
+$text-shadow: 1px 1px 1px rgb(0, 0, 0, 0.5), -1px -1px 1px rgb(0, 0, 0, 0.5),
+  1px 1px 1px rgb(0, 0, 0);
+
+//Paddins
 $padding-top-bottom-header: 10vh;
 $padding-left-right-header: 5vw;
 
 //BGs
 $bg-primary: #5648f9;
 $bg-seconday: #f96e2c;
-$bg-primary: #5648f9;
+$bg-alternative: #ff8c88;
+
+//color Text
 $color-text-blue: #5648f9;
 $color-text-black: black;
 $color-text-peach: #ff8c88;
-$bg-alternative: #ff8c88;
-$color-primary: #fcbdbc;
-$color-secondary: white;
 
 //Paddin margin
 $imageText-padding: 1rem;
