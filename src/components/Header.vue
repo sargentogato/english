@@ -84,9 +84,9 @@ const handleResize = () => {
     background-color: $bg-primary;
     color: rgb(255, 255, 255);
     text-shadow: $text-shadow;
-    background-image: url("../../public/images/header.jpg");
-    -moz-background-image: url("../../public/images/header.jpg");
-    -webkit-background-image: url("../../public/images/header.jpg");
+    background-image: url("/images/header.jpg");
+    -moz-background-image: url("/images/header.jpg");
+    -webkit-background-image: url("/images/header.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
