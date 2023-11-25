@@ -1795,8 +1795,8 @@
 </template>
 
 <script setup>
-const fillColor = "#2d3436";
-const strokeColor = "#2c3e50";
+const fillColor = "#F96E2C";
+const strokeColor = "#F96E2C";
 </script>
 
 <style lang="scss" scoped>
