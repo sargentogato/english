@@ -42,7 +42,8 @@
 
 <script setup>
 import svgImage from "../components/imageSVG.vue";
-import { vScrollReveal } from "vue-scroll-reveal";
+// import { vScrollReveal } from "vue-scroll-reveal";
+import { createScrollRevealDirective } from "vue-scroll-reveal";
 import { ref, onMounted, onBeforeUnmount } from "vue";
 
 onMounted(() => {
@@ -61,6 +62,11 @@ const props = defineProps({
 
 //variavbles
 const isSmallScreen = ref(window.innerWidth < 760);
+const vScrollReveal = createScrollRevealDirective({
+  delay: props.time,
+  easing: "ease-in-out",
+  origin: "bottom",
+});
 
 //functions
 const handleResize = () => {

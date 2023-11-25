@@ -7,6 +7,7 @@
         delay: props.time,
         easing: 'ease-in-out',
         origin: 'bottom',
+        distance: '300px',
       }"
     >
       <h2 class="section__title">{{ data.title }}</h2>

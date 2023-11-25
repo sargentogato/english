@@ -9,7 +9,8 @@
       v-scroll-reveal.reset="{
         delay: props.time,
         easing: 'ease-in-out',
-        origin: 'bottom',
+        origin: 'top',
+        distance: '200px',
       }"
     >
       {{ data.title }}
@@ -20,6 +21,7 @@
         delay: props.time,
         easing: 'ease-in-out',
         origin: 'bottom',
+        distance: '300px',
       }"
     >
       {{ data.description }}
@@ -32,6 +34,7 @@ import { vScrollReveal } from "vue-scroll-reveal";
 
 const props = defineProps({
   textData: Object,
+  time: Number,
 });
 </script>
 

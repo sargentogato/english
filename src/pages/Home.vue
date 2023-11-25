@@ -20,7 +20,7 @@ import { data } from "../assets/data.js";
 import { ref } from "vue";
 
 const textData = ref(data);
-const time = ref(500);
+const time = ref(800);
 </script>
 
 <style lang="scss" scoped>

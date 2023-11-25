@@ -6,6 +6,7 @@
       delay: props.time,
       easing: 'ease-in-out',
       origin: 'bottom',
+      distance: '300px',
     }"
   >
     <h2 class="section__mainTitle">
@@ -29,7 +30,6 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 import { vScrollReveal } from "vue-scroll-reveal";
 
 const props = defineProps({
