@@ -50,7 +50,7 @@ export const data = {
       callInfo: "or you can call us at the following number:",
       number: "368 56 56 39",
       secondTitle: "To offer you a better service",
-      request: "Please send us the following information to a better stimate:",
+      request: "Send us the following information:",
       infoSubmit:
         "Name and surname, E-mail, File to translate, Delivery date, Source language,Target language",
     },
