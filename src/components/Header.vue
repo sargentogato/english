@@ -82,7 +82,14 @@ const handleResize = () => {
 .header {
   &__box {
     background-color: $bg-primary;
-    color: $color-primary;
+    color: rgb(255, 255, 255);
+    text-shadow: $text-shadow;
+    background-image: url("../../public/images/header.jpg");
+    -moz-background-image: url("../../public/images/header.jpg");
+    -webkit-background-image: url("../../public/images/header.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   &__box,
@@ -112,12 +119,13 @@ const handleResize = () => {
 
 .section {
   &__box {
-    background-color: $bg-seconday;
-    color: white;
+    background-color: $bg-primary;
+    color: $color-text-peach;
   }
 
   &__box:nth-child(2) {
-    background-color: $bg-alternative;
+    color: white;
+    background-color: $bg-seconday;
   }
 
   &__title {
@@ -130,14 +138,6 @@ const handleResize = () => {
 
   &__subtitle {
     font-size: $titleSection-mobile;
-  }
-
-  &__title1 {
-    color: $color-text-blue;
-  }
-
-  &__info1 {
-    color: $color-text-black;
   }
 }
 
