@@ -1,6 +1,11 @@
 <template>
   <section class="row section">
-    <aside id="contact" class="section__box col-12">
+    <aside
+      id="contact"
+      class="section__box col-12"
+      v-for="(data, index) in dataContact"
+      :key="index"
+    >
       <h2 class="section__title" v-scroll-reveal.reset="props.scrollEfect">
         {{ data.title }}
       </h2>
@@ -19,10 +24,16 @@
       >
         {{ data.secondTitle }}
       </h2>
-      <p class="section__info" v-scroll-reveal.reset="props.scrollEfect">
+      <p
+        class="section__info section__infoToSend"
+        v-scroll-reveal.reset="props.scrollEfect"
+      >
         {{ data.request }}
       </p>
-      <p class="section__info" v-scroll-reveal.reset="props.scrollEfect">
+      <p
+        class="section__info section__infoRequested"
+        v-scroll-reveal.reset="props.scrollEfect"
+      >
         {{ data.infoSubmit }}
       </p>
     </aside>
@@ -38,7 +49,7 @@ const props = defineProps({
 });
 
 //variables
-const data = props.textData.contact[0];
+const dataContact = props.textData.contact;
 </script>
 
 <style lang="scss" scoped>
@@ -49,7 +60,6 @@ const data = props.textData.contact[0];
 
 .section {
   &__box {
-    color: rgb(0, 0, 0);
     padding-top: $padding-top-bottom-header;
     padding-bottom: $padding-top-bottom-header;
     padding-left: $padding-left-right-header;
@@ -61,11 +71,14 @@ const data = props.textData.contact[0];
     font-weight: bold;
     line-height: $line-heigt-general;
     text-align: center;
+    color: $color-text-blue;
   }
 
   &__secondTitle {
     padding-top: 1rem;
     font-weight: bold;
+    margin-bottom: 0;
+    color: $color-text-blue;
   }
 
   &__info {
@@ -79,6 +92,14 @@ const data = props.textData.contact[0];
   &__info:last-child {
     font-weight: bold;
     margin-top: -0.5rem;
+  }
+
+  &__infoToSend {
+    margin-bottom: 0;
+  }
+
+  &__infoRequested {
+    font-size: 1.2rem;
   }
 }
 
