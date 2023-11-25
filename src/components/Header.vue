@@ -20,10 +20,18 @@
         :key="index"
         :id="`section${index}`"
       >
-        <p class="section__title" v-scroll-reveal.reset="props.scrollEfect">
+        <p
+          class="section__title"
+          :class="`section__title${index}`"
+          v-scroll-reveal.reset="props.scrollEfect"
+        >
           {{ data.title }}
         </p>
-        <p class="section__info" v-scroll-reveal.reset="props.scrollEfect">
+        <p
+          class="section__info"
+          :class="`section__info${index}`"
+          v-scroll-reveal.reset="props.scrollEfect"
+        >
           {{ data.description }}
         </p>
         <svgImage
@@ -89,7 +97,6 @@ const handleResize = () => {
 
   &__title {
     font-size: $main-title-mobile;
-    color: white;
   }
 
   &__title,
@@ -111,7 +118,6 @@ const handleResize = () => {
 
   &__box:nth-child(2) {
     background-color: $bg-alternative;
-    color: #ffffff;
   }
 
   &__title {
@@ -124,6 +130,14 @@ const handleResize = () => {
 
   &__subtitle {
     font-size: $titleSection-mobile;
+  }
+
+  &__title1 {
+    color: $color-text-blue;
+  }
+
+  &__info1 {
+    color: $color-text-black;
   }
 }
 
