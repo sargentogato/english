@@ -58,22 +58,19 @@ function getImage(image) {
 .section {
   background-color: $bg-primary;
   padding-top: 5rem;
+  color: $color-text-peach;
 
   &__box {
-    color: rgb(0, 0, 0);
     padding-top: $padding-top-bottom-header;
     padding-bottom: $padding-top-bottom-header;
     padding-left: $padding-left-right-header;
     padding-right: $padding-left-right-header;
-    // text-align: center;
-    color: $color-primary;
   }
 
   &__mainTitle {
     font-size: 3rem;
     text-align: center;
     font-weight: bold;
-    color: white;
     padding: 0 2rem;
   }
 
