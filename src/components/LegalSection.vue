@@ -25,7 +25,6 @@ const props = defineProps({
 <style lang="scss" scoped>
 .section {
   &__box {
-    color: rgb(0, 0, 0);
     padding-top: $padding-top-bottom-header;
     padding-bottom: $padding-top-bottom-header;
     padding-left: $padding-left-right-header;
@@ -37,6 +36,7 @@ const props = defineProps({
     font-size: $title-mobile;
     font-weight: bold;
     line-height: $line-heigt-general;
+    color: $color-text-blue;
   }
 
   &__info {
