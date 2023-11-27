@@ -12,7 +12,10 @@
           :srcset="getImage(data.imageDesktop)"
         />
         <source media="(min-width:0px)" :srcset="getImage(data.imageMobile)" />
-        <img :src="getImage(data.imageDesktop)" alt="" />
+        <img
+          :src="getImage(data.imageDesktop)"
+          alt="Profesional Legal Translation"
+        />
       </picture>
 
       <div class="header__infoBox">
