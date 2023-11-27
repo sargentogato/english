@@ -5,6 +5,8 @@ export const data = {
       name: "Professional Legal Translations",
       description:
         "We provide legal and commercial translations in English, Italian, German, French, Spanish.",
+      imageMobile: "header-mobile.jpg",
+      imageDesktop: "header-desktop.jpg",
     },
   ],
   team: [

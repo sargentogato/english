@@ -6,72 +6,39 @@
       :key="index"
       id="presentation"
     >
-      <h1 class="header__title">
-        {{ data.name }}
-      </h1>
-      <h2 class="header__info">
-        {{ data.description }}
-      </h2>
-    </div>
-    <section class="section col-12 row">
-      <aside
-        class="section__box col-12 col-md-6"
-        v-for="(data, index) in props.textData.team"
-        :key="index"
-        :id="`section${index}`"
-      >
-        <p
-          class="section__title"
-          :class="`section__title${index}`"
-          v-scroll-reveal.reset="props.scrollEfect"
-        >
-          {{ data.title }}
-        </p>
-        <p
-          class="section__info"
-          :class="`section__info${index}`"
-          v-scroll-reveal.reset="props.scrollEfect"
-        >
-          {{ data.description }}
-        </p>
-        <svgImage
-          v-if="isSmallScreen && !index"
-          v-scroll-reveal.reset="props.scrollEfect"
+      <picture class="header__picture">
+        <source
+          media="(min-width:768px)"
+          :srcset="getImage(data.imageDesktop)"
         />
-      </aside>
-    </section>
-    <div class="imageSvg" v-scroll-reveal.reset="props.scrollEfect">
-      <svgImage v-if="!isSmallScreen" />
+        <source media="(min-width:0px)" :srcset="getImage(data.imageMobile)" />
+        <img :src="getImage(data.imageDesktop)" alt="" />
+      </picture>
+
+      <div class="header__infoBox">
+        <h1 class="header__title">
+          {{ data.name }}
+        </h1>
+        <h2 class="header__info">
+          {{ data.description }}
+        </h2>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import svgImage from "../components/imageSVG.vue";
-import { vScrollReveal } from "vue-scroll-reveal";
-import { ref, onMounted, onBeforeUnmount } from "vue";
-
-onMounted(() => {
-  window.addEventListener("resize", handleResize);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener("resize", handleResize);
-});
-
 //props
 const props = defineProps({
   textData: Object,
   scrollEfect: Object,
 });
 
-//variavbles
-const isSmallScreen = ref(window.innerWidth < 760);
+function getImage(image) {
+  const path = new URL("../../public/images", import.meta.url).href;
 
-//functions
-const handleResize = () => {
-  isSmallScreen.value = window.innerWidth < 760;
-};
+  return `${path}/${image}`;
+}
 </script>
 
 <style lang="scss" scoped>
@@ -81,33 +48,31 @@ const handleResize = () => {
 }
 .header {
   &__box {
-    background-color: $bg-primary;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
     color: rgb(255, 255, 255);
+    padding: 0;
+    text-align: center;
     text-shadow: $text-shadow;
-    background-image: url("/images/header.jpg");
-    -moz-background-image: url("/images/header.jpg");
-    -webkit-background-image: url("/images/header.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    overflow: hidden;
   }
 
-  &__box,
-  .section__box,
-  .imageSvg {
-    padding-top: $padding-top-bottom-header;
-    padding-bottom: $padding-top-bottom-header;
-    padding-left: $padding-left-right-header;
-    padding-right: $padding-left-right-header;
-    text-align: center;
+  img {
+    filter: brightness(65%);
+  }
+
+  &__infoBox {
+    position: absolute;
   }
 
   &__title {
     font-size: $main-title-mobile;
   }
 
-  &__title,
-  .section__title {
+  &__title {
     line-height: $line-heigt-general;
     font-weight: bold;
   }
@@ -117,36 +82,12 @@ const handleResize = () => {
   }
 }
 
-.section {
-  &__box {
-    background-color: $bg-primary;
-    color: $color-text-peach;
-  }
-
-  &__box:nth-child(2) {
-    color: white;
-    background-color: $bg-seconday;
-  }
-
-  &__title {
-    font-size: $title-mobile;
-  }
-
-  &__info {
-    font-size: $info-mobile;
-  }
-
-  &__subtitle {
-    font-size: $titleSection-mobile;
-  }
-}
-
-.imageSvg {
-  display: none;
-}
-
 @media (width > 760px) {
   .header {
+    &__box {
+      height: 600px;
+    }
+
     &__title {
       font-size: $main-title-desktop;
     }
@@ -154,20 +95,6 @@ const handleResize = () => {
     &__info {
       font-size: $info-desktop;
     }
-  }
-
-  .section {
-    &__info {
-      font-size: $info-desktop;
-    }
-
-    &__title {
-      font-size: $titleSection-desktop;
-    }
-  }
-
-  .imageSvg {
-    display: block;
   }
 }
 
@@ -189,25 +116,6 @@ const handleResize = () => {
 .header {
   &__info {
     animation: headerInfo $time-animation;
-  }
-}
-
-#section0 {
-  opacity: 0;
-  transform: translateY(100%);
-  animation: fadeIn $time-animation $delay-one both; /* 'both' asegura que se mantengan los estilos finales */
-}
-
-#section1 {
-  opacity: 0;
-  transform: translateY(100%);
-  animation: fadeIn $time-animation $delay-two both;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 </style>
