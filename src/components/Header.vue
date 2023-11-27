@@ -82,7 +82,21 @@ function getImage(image) {
   }
 }
 
-@media (width > 760px) {
+@media (width < 400px) {
+  .header {
+    height: 50vh;
+
+    &__picture {
+      height: 100%;
+    }
+
+    img {
+      height: 100%;
+    }
+  }
+}
+
+@media (width > 960px) {
   .header {
     &__box {
       height: 600px;
