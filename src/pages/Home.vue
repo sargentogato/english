@@ -2,6 +2,7 @@
   <Menu />
   <div class="container-fluid p-0 main">
     <Header :textData="textData" :scrollEfect="scrollEfect" />
+    <MainSection :text-data="textData" />
     <LegalSection :textData="textData" />
     <div id="diferent"></div>
     <DiferentiatesSection :textData="textData" :scrollEfect="scrollEfect" />
@@ -12,6 +13,7 @@
 <script setup>
 import Menu from "../components/Menu.vue";
 import Header from "../components/Header.vue";
+import MainSection from "../components/MainSection.vue";
 import LegalSection from "../components/LegalSection.vue";
 import DiferentiatesSection from "../components/DiferentiatesSection.vue";
 import Contact from "../components/Contact.vue";
@@ -29,8 +31,4 @@ const scrollEfect = ref({
 });
 </script>
 
-<style lang="scss" scoped>
-.main {
-  overflow-y: hidden;
-}
-</style>
+<style lang="scss" scoped></style>
